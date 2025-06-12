@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const str = 'hello world';
+    // 1. 获取字符串的长度
+    console.log(str.length);
+    // 2.  获取指定位置的字符
+    console.log(str.charAt(0))
+    console.log(str.at(0))
+    // 3. 查找
+    // 查找首次出现的位置
+    console.log(str.indexOf('o'))
+    // 查找最后一次出现的位置
+    console.log(str.lastIndexOf('o'))
+    // 是否包含
+    console.log(str.includes('o'))
+    // 是否以某个字符串开头
+    console.log(str.startsWith('hello'))
+    // 正则匹配
+    console.log(str.match(/o/g))
+    // 搜索匹配位置
+    console.log(str.search(/o/g))
+    // 4. 拼接字符串
+    const str2 = '笨蛋阿黄'
+    const str3 = str.concat(str2)
+    console.log(str3)
+    // 5. 重复
+    console.log(str.repeat(2))
+    // 6. 前补全，后补全
+    console.log(str.padStart(14,'a'))
+    // 7. 截取
+    // slice
+    const str4 = '天天开心哈哈哈哈'
+    console.log(str4.slice(0,4))
+    console.log(str4.substring(0,4))
+    // 8.大小写转换
+    console.log(str.toLowerCase())
+    console.log(str.toUpperCase())
+    // 9. 分割
+    // 分割为数组
+    console.log(str.split(''))
+    // 10. 替换
+    console.log(str.replace('o','a'))
+    console.log(str.replaceAll('o','a'))
+    // 11. 转换为字符串
+    console.log(String(123))
+    console.log((123).toString())
+    // 隐式转换
+    // 模版字符串
+    console.log(JSON.stringify(123))
+    // 12.去除空格
+    const str5 = ' h o 0    8'
+    // 去除前后空格
+    console.log(str5.trim())
+    // 去除所有空格
+    console.log(str5.replace(/\s+/g,''))
+    // 13. 遍历
+    for (const item of str) {
+        console.log(item)
+    }
+  </script>
+</body>
+</html>

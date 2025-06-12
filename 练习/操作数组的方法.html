@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1.增删元素
+    let arr = [1,2,3,4,5];
+    //  末尾添加和删除
+    console.log(arr.push(7)) // 返回新数组的长度，会改变原数组
+    console.log(arr)
+    console.log(arr.pop()) // 返回被删除的元素，会改变原数组
+    console.log('arr：',arr)
+    //  开头添加和删除
+    console.log(arr.unshift(0)) // 返回新数组的长度，会改变原数组
+    console.log('arr：',arr)
+    console.log('arr开头删除：',arr.shift()) //返回被删除的元素，会改变原数组
+    console.log('arr：',arr)
+    console.log('---------')
+  // 2. 合并与拆分/截取
+  let arr1 = [1,2,3,4,5];
+  let arr2 = [6,7,8,9,10];
+  console.log(arr1.concat(arr2)) // 返回合并后的新数组，不会改变原数组
+  console.log('arr1：',arr1)
+  console.log('arr2：',arr2)
+  console.log(arr2.slice(0,3)) // 返回截取的新数组，不会改变原数组
+  // 3. 增删和替换splice
+  arr1.splice( 1, 2, '你好', 'a', 'b', 5, 6)
+  console.log('arr1：',arr1)
+  console.log('--------')
+  // 4. 遍历方法
+  // for of 
+  // 基本遍历forEach
+  let arr3 = [1,2,3,4,5];
+  arr3.forEach(item => console.log(item))
+  console.log('arr3：',arr3)
+  // 映射与转换map
+  console.log(arr3.map(item => item*2 ))
+  // 过滤filter
+  console.log(arr3.filter(item => item > 3))
+  // 查找元素 find 
+  console.log(arr3.find(item => item === 2))
+  // 查找元素索引 findIndex
+  console.log(arr3.findIndex(item => item === 2))
+  // 查找元素索引 indexOf
+  console.log(arr3.indexOf(2))
+  // 5. 检测与包含
+  // some 是否有满足条件的元素
+  const arr4 = [1,2,3,4,5];
+  console.log(arr4.some(item => item === 4))  //有一个满足条件就返回true
+  // eveyy 是否所有元素都满足条件
+  console.log(arr4.every(item => item > 0)) //所有元素都满足条件才返回true
+  console.log(arr4.every(item => item > 1)) //有一个不满足条件就返回false
+  // includes 是否包含某个元素
+  console.log(arr4.includes(6)) // 不包含返回false
+  // 6. 排序和反转
+  const arr5 = [33,77,22,55,44,66];
+  console.log(arr5.sort())
+  console.log(arr5)
+  const arr6 = arr5.sort()
+  console.log(arr6.reverse())
+  // 7. 求和
+  const arr7 = [1,2,3,4,5];
+  console.log('求和：', arr7.reduce((sum,item) => sum + item, 0))
+  // 8. 拼接
+  // concat、展开运算符、push结合展开运算符、
+  const arr8 = [1,2,3,4,5];
+  console.log(arr8.concat(arr7))
+  console.log([...arr8, ...arr7])
+  console.log(arr8.push(...arr7))
+  Array.prototype.push.apply(arr8, arr7)
+  console.log(arr8)
+  // 9. 数组转字符串
+  const arr9 = [1,2,3,4,5];
+  console.log(arr9.join())
+  console.log(arr9.toString())
+  // 10.判断是不是数组
+  console.log(Array.isArray(arr9))
+  console.log(arr9 instanceof Array)
+  console.log(Object.prototype.toString.call(arr9))
+  // 11.数组扁平化
+  const arr10 = [1,2,3,[4,5,6,[7,8,9]]];
+  console.log(arr10.flat(Infinity))
+  // 12. 数组去重
+  const arr11 = [1,2,3,4,5,1,2,3,4,5];
+  console.log([...new Set(arr11)])
+  console.log(Array.from(new Set(arr11)))
+  console.log( arr11.filter((item,index) => arr11.indexOf(item) === index))
+
+  const arr12 = [
+    {id: 1, name: '张三'},
+    {id: 2, name: '李四'},
+    {id: 3, name: '王五'},
+    {id: 5, name: '赵六'}
+  ]
+  console.log(arr12.find(item => item.id === 2))
+  console.log(arr12.findIndex(item => item.id === 2))
+  console.log(arr12.filter(item => item.id === 1))
+  const dataMap = new Map(arr12.map(item => [item.id === 2, item]))
+  console.log(dataMap)
+  </script>
+
+</body>
+</html>
